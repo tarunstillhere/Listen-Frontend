@@ -3,8 +3,9 @@ import '../../index.css';
 
 function Stats() {
   return (
-    <div className="row">
-      <div className="col stats-container">
+    <div className='container'>
+    <div className="row stats">
+      <div className="col stats-container" >
         <div className="stats-item">
           <p className="numbers mb-2">30,271+</p>
           <p className="heading">Total Experts</p>
@@ -18,6 +19,7 @@ function Stats() {
           <p className="heading">Total Customers</p>
         </div>
       </div>
+    </div>
     </div>
   );
 }

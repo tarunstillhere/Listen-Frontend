@@ -1,93 +1,100 @@
 import React from "react";
 import "../index.css";
 import { Link } from "react-router-dom";
+import Hero from "./home/Hero"; // Assuming Hero is in the same folder
+import Stats from "./home/Stats"; // Assuming Stats is in the same folder
 
-function Navbar() {
+function MainPage() {
   return (
-    <nav class="navbar sticky-top navbar-expand-lg bg-body-tertiary">
-      <div style={{ height: "100px", width: "20%" }} class="container-fluid">
-        <div className="navbar-left">
-          <Link class="navbar-brand" to="/">
-            <img className="logo" src="./media/images/logo.svg" />
-          </Link>
-
-          <Link to="/">
-            <p
-              className="logo-title m-0"
-              style={{ fontSize: "26px", fontWeight: "600", color: "#000" }}
+    <div className="background-container">
+      {/* Navbar */}
+      <nav className="navbar sticky-top navbar-expand-lg">
+        <div className="container-fluid">
+          <div className="navbar-left">
+            <Link
+              className="navbar-brand"
+              to="/"
+              style={{ textDecoration: "none" }}
             >
-              LISTNER
-            </p>
-          </Link>
-        </div>
+              <img className="logo" src="./media/images/logo.svg" alt="Logo" />
+            </Link>
 
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <form class="d-flex" role="search">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-  
-                <li class="nav-item">
+            <Link to="/" style={{ textDecoration: "none" }}>
+              <p className="logo-title">LISTNER</p>
+            </Link>
+          </div>
+
+          <button
+            className="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span className="navbar-toggler-icon"></span>
+          </button>
+          <div className="collapse navbar-collapse" id="navbarSupportedContent">
+            <form
+              className="d-flex flex-grow-1 justify-content-end"
+              role="search"
+            >
+              {" "}
+              {/* Add justify-content-end */}
+              <ul className="navbar-nav mb-2 mb-lg-0">
+                <li className="nav-item">
                   <Link
-                    class="nav-link active"
+                    className="nav-link active"
                     aria-current="page"
                     to="/meeting"
+                    style={{ color: "white" }}
                   >
-                    Book a meeting
+                    Personal Interaction
                   </Link>
                 </li>
-                
-                <li class="nav-item">
-                <Link
-                  class="nav-link active"
-                  aria-current="page"
-                  to="/services"
-                >
-                  Upcoming Services
+                <li className="nav-item">
+                  <Link
+                    className="nav-link active"
+                    aria-current="page"
+                    to="/services"
+                    style={{ color: "white" }}
+                  >
+                    Upcoming Services
+                  </Link>
+                </li>
+                <Link to="/signin" style={{ textDecoration: "none" }}>
+                  <button className="nav-btn nav-item" type="submit">
+                    Sign in
+                  </button>
                 </Link>
-              </li>
-
-              <li class="nav-item">
-                <Link class="nav-link active" aria-current="page" to="/talk">
-                  Talk with your buddy
+                <Link to="/signup" style={{ textDecoration: "none" }}>
+                  <button
+                    className="nav-btn nav-item"
+                    style={{
+                      backgroundColor: "#fff",
+                      border: "1px solid black",
+                      color: "#000",
+                      marginLeft: "25px",
+                    }}
+                    type="submit"
+                  >
+                    Register
+                  </button>
                 </Link>
-              </li>
-
-              <Link to="/signin" style={{ textDecoration: "none" }}>
-                <button className="nav-btn nav-item" type="submit">
-                  Sign in
-                </button>
-              </Link>
-
-              <Link to="/signup" style={{ textDecoration: "none" }}>
-                <button
-                  className="nav-btn nav-item"
-                  style={{
-                    backgroundColor: "#fff",
-                    border: "1px solid black",
-                    color: "#000",
-                    marginLeft: "25px",
-                  }}
-                  type="submit"
-                >
-                  Register
-                </button>
-              </Link>
-            </ul>
-          </form>
+              </ul>
+            </form>
+          </div>
         </div>
-      </div>
-    </nav>
+      </nav>
+
+      {/* Hero Section */}
+      <Hero />
+
+      {/* Stats Section */}
+      <Stats />
+    </div>
   );
 }
 
-export default Navbar;
+export default MainPage;

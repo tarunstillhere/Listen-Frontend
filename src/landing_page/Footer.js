@@ -1,46 +1,45 @@
 import React from 'react';
 import "../index.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTwitter,faSquareInstagram,faLinkedin,faFacebook } from '@fortawesome/free-brands-svg-icons';
-
+import { faTwitter, faSquareInstagram, faLinkedin, faFacebook } from '@fortawesome/free-brands-svg-icons';
+import { Link } from "react-router-dom";
 
 function Footer() {
     return ( 
-    <footer className='footer mt-5'>
-        <div className='container mt-5 '>
-            <div className='row'>
-                <div className='col mt-5'></div>
-                <div className='footer-links col mb-5 mt-5'>
-                    <p style={{color : "#fff"}}>Explore</p>
-                    <a href=''>How it works?</a><br/>
-                    <a href=''>Technology</a><br/>
-                    <a href=''>Fulfilment Centre</a><br/>
-                    <a href=''>Pricing</a><br/>
+        <footer className='footer'>
+            <div className='container text-center'>
+                {/* Logo and Title */}
+                <div className='row footer-logo' style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '20px' }}>
+                    <Link to="/" style={{ textDecoration: "none" }}>
+                        <img className="logo-footer" src="./media/images/logo.svg" alt="Logo" />
+                    </Link>
+
+                    <Link to="/" style={{ textDecoration: "none" }}>
+                        <p className="logo-title" style={{ color: "#fff", fontSize: '1.5rem' }}>LISTNER</p>
+                    </Link>
                 </div>
-                <div className='footer-links col mb-5 mt-5'>
-                    <p style={{color : "#fff"}}>Resources</p>
-                    <a href=''>Help Center</a><br/>
-                    <a href=''>Developers</a><br/>
-                    <a href=''>Blog</a><br/>
-                    <a href=''>App Store</a><br/>
+
+                {/* Social Media Icons */}
+                <div className='social-links mt-4' style={{ display: 'flex', justifyContent: 'center', gap: '20px' }}>
+                    <a href='#' style={{ color: '#fff' }}>
+                        <FontAwesomeIcon icon={faFacebook} size='2x' />
+                    </a>
+                    <a href='#' style={{ color: '#fff' }}>
+                        <FontAwesomeIcon icon={faTwitter} size='2x' />
+                    </a>
+                    <a href='#' style={{ color: '#fff' }}>
+                        <FontAwesomeIcon icon={faSquareInstagram} size='2x' />
+                    </a>
+                    <a href='#' style={{ color: '#fff' }}>
+                        <FontAwesomeIcon icon={faLinkedin} size='2x' />
+                    </a>
                 </div>
-                <div className='footer-links col mb-5 mt-5'>
-                    <p style={{color : "#fff"}}>Company</p>
-                    <a href=''>About</a><br/>
-                    <a href=''>Customers</a><br/>
-                    <a href=''>Jobs</a><br/>
-                    <a href=''>Contact</a><br/>
-                </div>
+
+                {/* Footer Paragraph */}
+                <p style={{ color: "#fff", marginTop: '20px', fontSize: '1.1rem' }}>Let's help each other</p>
             </div>
-            <div className='social-links mt-5' style={{display: 'flex', justifyContent: 'center'}}>
-                <a href=''><FontAwesomeIcon icon={faLinkedin} /></a>
-                <a href=''><FontAwesomeIcon icon={faSquareInstagram} /></a>
-                <a href=''><FontAwesomeIcon icon={faFacebook} /></a>
-                <a href=''><FontAwesomeIcon icon={faTwitter} /></a>
-            </div>
-        </div>
-    </footer>
-     );
+        </footer>
+    );
 }
 
 export default Footer;
