@@ -13,41 +13,15 @@ code {
     monospace;
 }
 
-.herobtn {
-  position: absolute;
-  width: 232px;
-  height: 64.25px;
-  top: 1138px;
-  left: 600px;
-  gap: 10px;
-  border-radius: 10px;
-  border: 2px solid #fff5f5;
-  padding: 14px, 38px, 14px, 38px;
-  transform: translate(-50%, -50%);
-  background: linear-gradient(
-    94.63deg,
-    rgba(255, 255, 255, 0.9) 3.17%,
-    rgba(255, 255, 255, 0.9) 48.7%,
-    rgba(255, 246, 246, 0.9) 97.75%
-  );
-  color: black;
-  transition: 0.3s;
-  font-size: 24px;
-  font-weight: 500;
-  line-height: 29.05px;
-  text-align: center;
-}
-
+.herobtn,
 .herobtn2 {
   position: absolute;
-  width: 232px;
+  width: 232px; /* Fixed width for large screens */
   height: 64.25px;
-  top: 1138px;
-  left: 852px;
   gap: 10px;
   border-radius: 10px;
   border: 2px solid #fff5f5;
-  padding: 14px, 38px, 14px, 38px;
+  padding: 14px 38px;
   transform: translate(-50%, -50%);
   background: linear-gradient(
     94.63deg,
@@ -63,23 +37,209 @@ code {
   text-align: center;
 }
 
-.herobtn:hover {
-  box-shadow: 2px 2px 3px rgb(85, 81, 81);
-  opacity: 0.7;
-}
-
+.herobtn:hover,
 .herobtn2:hover {
   box-shadow: 2px 2px 3px rgb(85, 81, 81);
   opacity: 0.7;
 }
 
+/* Large devices (desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  .herobtn {
+    top: 1138px;
+    left: 600px; /* Original left position for large screens */
+  }
+
+  .herobtn2 {
+    top: 1138px;
+    left: 852px; /* Original left position for large screens */
+  }
+}
+
+/* Medium devices (tablets, 768px to 1199px) */
+@media (max-width: 1199px) and (min-width: 768px) {
+  .herobtn {
+    top: 140%; /* Adjust top for tablet */
+    left: 50%;  /* Center the button horizontally */
+  }
+
+  .herobtn2 {
+    top: 150%; /* Adjust top for tablet */
+    left: 50%;  /* Center the button horizontally */
+  }
+}
+
+/* Small devices (mobiles, less than 768px) */
+@media (max-width: 767px) {
+  .herobtn {
+    top: 110%; /* Adjust top for small screens */
+    left: 50%; /* Center the button horizontally */
+    width: 70%; /* Increase width to fit smaller screens */
+    font-size: 20px; /* Adjust font size */
+  }
+
+  .herobtn2 {
+    top: 120%; /* Adjust top for small screens */
+    left: 50%; /* Center the button horizontally */
+    width: 70%; /* Increase width to fit smaller screens */
+    font-size: 20px; /* Adjust font size */
+  }
+}
+
+/* Extra small devices (smaller phones, less than 480px) */
+@media (max-width: 480px) {
+  .herobtn {
+    top: 90%; /* Further adjust top */
+    left: 50%; /* Center the button horizontally */
+    width: 80%; /* Max width for very small screens */
+    font-size: 16px; /* Reduce font size */
+  }
+
+  .herobtn2 {
+    top: 100%; /* Further adjust top */
+    left: 50%; /* Center the button horizontally */
+    width: 80%; /* Max width for very small screens */
+    font-size: 16px; /* Reduce font size */
+  }
+}
+/* Default styles for large screens */
+.left-side span, 
+.right-side span {
+  font-size: 60px;
+}
+
+.left-side img, 
+.right-side img {
+  width: 50px;
+  height: 50px;
+}
+
+/* Medium screens (768px - 1199px) */
+@media (max-width: 1199px) {
+  .left-side,
+  .right-side {
+    left: 0px;
+    right: 0px;
+    top: 50px;
+    gap: 10px;
+    flex: 1 1 50%;
+  }
+
+  .left-side span,
+  .right-side span {
+    font-size: 45px;
+  }
+
+  .left-side img, 
+  .right-side img {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+/* Small screens (less than 768px) */
+@media (max-width: 768px) {
+  .left-side {
+    position: relative;
+    left: 0;
+    justify-content: center;
+  }
+
+  .right-side {
+    position: relative;
+    left: 0;
+    justify-content: center;
+  }
+
+  .left-side span, 
+  .right-side span {
+    font-size: 35px;
+  }
+
+  .left-side img, 
+  .right-side img {
+    width: 35px;
+    height: 35px;
+  }
+}
+
+/* Extra small screens (stacking the elements vertically) */
+@media (max-width: 480px) {
+  .left-side,
+  .right-side {
+    position: static;
+    width: 100%;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+
+  .left-side span, 
+  .right-side span {
+    font-size: 25px;
+  }
+
+  .left-side img, 
+  .right-side img {
+    width: 25px;
+    height: 25px;
+  }
+}
+
+/* Base styles for large screens */
+.responsive-container {
+  width: 80%;
+  max-width: 1009px;
+  height: auto;
+  top: 300px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid #000;
+  box-sizing: border-box;
+  position: relative; /* Ensure relative positioning for top adjustments */
+}
+
+/* Medium screens (768px - 1199px) */
+@media (max-width: 1199px) {
+  .responsive-container {
+    width: 90%;
+    top: 250px;
+  }
+}
+
+/* Small screens (less than 768px) */
+@media (max-width: 768px) {
+  .responsive-container {
+    width: 95%;
+    top: 350px; /* Increase this value to push the image further down */
+    margin-top: 50px; /* Additional margin if needed */
+  }
+
+}
+
+/* Extra small screens (less than 480px) */
+@media (max-width: 480px) {
+  .responsive-container {
+    width: 100%;
+    top: 450px; /* Further increase this value to push the image down */
+    margin-top: 100px; /* Additional margin if needed */
+  }
+}
+
+
+/* Styles for the stats container */
 .stats-container {
   height: 135px;
   display: flex;
+  flex-direction: row; /* Default direction */
   justify-content: space-between;
   align-items: center;
   padding: 35px 50px;
-  width: 1339px;
+  width: 100%; /* Make the width responsive */
+  max-width: 1339px;
   gap: 19px;
   border-radius: 15px;
   background: rgba(212, 212, 212, 0.1); /* Semi-transparent background */
@@ -94,11 +254,45 @@ code {
   -webkit-backdrop-filter: blur(10px); /* Safari support */
 }
 
+/* Styles for each stats item */
 .stats-item {
   text-align: center;
   color: #ffffff;
   margin-left: 2rem;
 }
+
+/* Styles for the stats row */
+.stats {
+  height: auto; /* Auto height to fit content */
+  display: flex;
+  flex-direction: row; /* Default direction */
+  justify-content: space-around;
+  align-items: center;
+  color: #fff;
+  padding: 20px 0;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+  .stats-container {
+    flex-direction: column; /* Stack items vertically on small screens */
+    padding: 20px; /* Adjust padding for smaller screens */
+    position: relative;
+        bottom: 200px;
+        height: 335px;
+  }
+  
+  .stats-item {
+    margin-left: 0; /* Remove left margin when stacking vertically */
+    margin-bottom: 20px; /* Add space between stacked items */
+  }
+
+  .stats {
+    flex-direction: column; /* Stack items vertically */
+    height: auto; /* Adjust height to fit content */
+  }
+}
+
 
 .numbers,
 .heading {
@@ -117,39 +311,67 @@ code {
   line-height: 26.4px;
 }
 
-.card {
-  border: 1px;
-  filter: drop-shadow(0 0 0.05rem gray);
-  border-radius: 28px;
-  transition: 0.3s;
-  cursor: pointer;
-  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+.issue-container {
+  margin: 0;
+  height: 816px;
+  width: 100%;
+  box-sizing: border-box;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.8), rgba(16, 18, 21, 1));
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-.card:hover {
-  box-shadow: 0 5px 12px 0 rgba(0, 0, 0, 0.1);
-  opacity: 0.7;
+.issue-heading {
+  color: white;
+  filter: blur(0.5px);
+  font-size: 36px;
+  font-weight: 800;
+  margin-bottom: 40px;
+  position: absolute;
+  top: 80px;
+}
+
+.slider-wrapper {
+  width: 80%;
+}
+
+.slider-item {
+  position: relative;
+  text-align: center;
+  padding: 0 15px;
+}
+
+.card {
+  background-color: white;
+  margin: 0 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  transition: 0.3s;
+  cursor: pointer;
 }
 
 .card-img {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  align-self: center;
+  width: 100%;
+  height: auto;
+  border-radius: 15px;
 }
 
-.card-text {
-  font-size: 1rem;
-  line-height: 25px;
-  font-weight: 400;
-  width: 268px;
-  height: 143px;
+/* Responsive styles */
+@media (max-width: 1024px) {
+  .slider-item {
+      margin: 0 5px;
+  }
 }
 
-.card-container {
-  display: flex;
-  justify-content: space-around;
+@media (max-width: 768px) {
+  .slider-item {
+      margin: 0;
+  }
 }
+
 
 .qna {
   font-size: 34px;
@@ -228,6 +450,23 @@ code {
 }
 
 .nav-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 120px;
+  border-radius: 20px;
+  height: 40px;
+  font-size: 18px;
+  border: none;
+  background-color: #5cb1ff;
+  color: #fff;
+  margin-left: 16px;
+  font-weight: 400;
+  transition: 0.3s;
+  padding: 20px;
+}
+
+.nav-btn2 {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -491,19 +730,54 @@ code {
   padding: 20px 0;
 }
 
+/* Base styles for large screens */
 .click-away {
-  width: 1228px;
-  height: 92px;
-  position: absolute;
-  top: 982px;
-  left: 107px;
-  font-size: 76.34px;
-  font-weight: 800;
-  line-height: 92.38px;
+  width: 80%; /* Responsive width */
+  max-width: 1228px; /* Maximum width */
+  height: auto; /* Height adjusts to content */
+  position: absolute; /* Absolute positioning */
+  top: 130%; /* Position vertically */
+  left: 50%; /* Position horizontally */
+  transform: translate(-50%, -50%); /* Center the text */
+  font-size: 5rem; /* Base font size */
+  font-weight: bold;
+  line-height: 1.2; /* Line height relative to font size */
   text-align: center;
-  color: 0px 0px 3.5px 0px #fefefe;
+  color: #fefefe; /* Text color */
   filter: blur(1px);
+  margin-bottom: 40px;
 }
+
+/* Medium screens (768px - 1199px) */
+@media (max-width: 1199px) {
+  .click-away {
+    font-size: 4rem; /* Adjust font size */
+    top: 125%; /* Slight adjustment */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -52%); /* Adjust centering */
+  }
+}
+
+/* Small screens (768px - 480px) */
+@media (max-width: 768px) {
+  .click-away {
+    font-size: 3rem; /* Further adjust font size */
+    top: 100%; /* Slight adjustment */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -54%); /* Adjust centering */
+  }
+}
+
+/* Extra small screens (less than 480px) */
+@media (max-width: 480px) {
+  .click-away {
+    font-size: 2rem; /* Further adjust font size */
+    top: 80%; /* Slight adjustment */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -56%); /* Adjust centering */
+  }
+}
+
 
 /* General styling */
 .about-page {
@@ -512,12 +786,12 @@ code {
 }
 
 /* Message text styling */
-.click-away {
+/* .click-away {
   font-size: 5rem;
   color: white;
   margin-bottom: 40px;
   font-weight: bold;
-}
+} */
 
 .about-p {
   font-size: 2.5rem;
@@ -642,7 +916,6 @@ code {
   background: linear-gradient(180deg, #000000 0%, #434343 100%);
   padding: 50px 0;
   color: white;
-  text-align: center;
 }
 
 /* Review header */
@@ -658,8 +931,9 @@ code {
   border: 2px solid gray;
   border-radius: 15px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  height: 530px;
-  width: 308px;
+  height: auto; /* Changed from fixed height to auto */
+  width: 100%; /* Changed from fixed width to 100% */
+  max-width: 308px; /* Set a max-width to prevent too large cards */
   margin: auto;
   transition: transform 0.2s;
 }
@@ -693,15 +967,59 @@ code {
   text-align: justify;
 }
 
+/* Media Queries */
+@media (max-width: 768px) {
+  .review-header {
+    font-size: 2rem; /* Smaller font size on smaller screens */
+  }
+
+  .review-card {
+    width: 100%; /* Full width on smaller screens */
+    max-width: none; /* Remove max-width constraint */
+  }
+
+  .review-img {
+    width: 80px; /* Adjust image size */
+    height: 80px; /* Adjust image size */
+  }
+}
+
+@media (max-width: 576px) {
+  .review-header {
+    font-size: 1.5rem; /* Even smaller font size on extra small screens */
+  }
+
+  .card-text {
+    font-size: 0.9rem; /* Slightly smaller text size */
+  }
+}
+
+/* Centering the review header */
+.review-header {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  color: white;
+  text-align: center; /* Center the heading text */
+}
+
+/* Centering the review consent paragraph */
 .review-consent {
-  width: 500px;
+  width: 100%; /* Make the width 100% to take the full width of its container */
+  max-width: 500px; /* Add max-width for larger screens */
   height: 25px;
   font-size: 16px;
   font-weight: 400;
   line-height: 25px;
-  text-align: justified;
+  text-align: center; /* Center the text */
   color: rgba(114, 114, 114, 1);
-  margin-top: 40px;
+  margin: 40px auto 0 auto; /* Center the element and add margin on top */
+}
+
+/* Ensure parent container is centered */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .footer {
@@ -737,4 +1055,132 @@ footer p {
   margin-top: 20px;
 }
 
+@media (max-width: 992px) {
+  .nav-link {
+    display: block;
+    font-size: var(--bs-nav-link-font-size);
+    font-weight: var(--bs-nav-link-font-weight);
+    text-decoration: none;
+    background: 0 0;
+    border: 0;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+      border-color 0.15s ease-in-out;
+    padding: 1rem 0 1rem 3rem;
+  }
 
+  .nav-item {
+    display: flex;
+    justify-content: center;
+    width: auto;
+    font-weight: 400;
+    font-size: 18px;
+    height: 20px;
+    margin-left: 8px;
+    white-space: nowrap;
+    margin-top: 1rem;
+  }
+
+  .nav-btn {
+    margin-left: 5rem;
+    margin-top: 2rem;
+  }
+
+  .btn-res {
+    margin-top: 1rem;
+    /* margin-left: 4.6rem; */
+    margin-left: 2.7rem;
+  }
+}
+
+.about-title {
+  font-size: 3rem; /* Larger font size for large screens */
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 40px;
+  margin-top: 5px; /* Shift title upwards */
+  letter-spacing: 1px;
+}
+
+/* Container adjustments for responsiveness */
+.para-container {
+  margin-bottom: 20px;
+  color: #e0e0e0; /* Light gray text */
+  height: auto; /* Adjust height to be dynamic */
+  padding: 0 15px; /* Add padding to prevent text from touching edges */
+}
+
+.about-title {
+  font-size: 3rem; /* Larger font size for large screens */
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 40px;
+  margin-top: 5px; /* Shift title upwards */
+  letter-spacing: 1px;
+}
+
+/* Container adjustments for responsiveness */
+.para-container {
+  margin-bottom: 20px;
+  color: #e0e0e0; /* Light gray text */
+  height: auto; /* Adjust height to be dynamic */
+  padding: 0 15px; /* Add padding to prevent text from touching edges */
+}
+
+/* Paragraph adjustments for responsiveness */
+.about-para {
+  font-size: 1.6rem; /* Larger font size */
+  line-height: 1.5;
+  margin-bottom: 40px;
+  word-wrap: break-word; /* Ensures long text breaks to next line */
+  max-width: 100%; /* Adjust width for responsiveness */
+  text-align: justify; /* Justifies text for a cleaner look */
+  box-sizing: border-box;
+  padding: 0; /* Remove padding if needed */
+  position: relative; /* Restore relative positioning */
+  left: 5%; /* Remove any left shift */
+  top: 0; /* Remove any top shift */
+}
+
+/* Media Queries for responsiveness */
+
+/* For tablets */
+@media (max-width: 768px) {
+  .about-title {
+    font-size: 2.5rem; /* Adjust title size */
+    margin-top: 20px; /* Adjust margin */
+  }
+
+  .about-para {
+    font-size: 1.4rem; /* Adjust paragraph font size */
+    margin-bottom: 30px; /* Adjust spacing */
+    padding: 0 10px; /* Adjust padding for tablets */
+  }
+}
+
+/* For mobile devices */
+@media (max-width: 576px) {
+  .about-title {
+    font-size: 2rem; /* Adjust title size */
+    margin-top: 15px; /* Adjust margin */
+  }
+
+  .about-para {
+    font-size: 1.2rem; /* Adjust paragraph font size */
+    margin-bottom: 20px; /* Adjust spacing */
+    padding: 0 10px; /* Adjust padding for mobile */
+  }
+}
+
+/* For mobile devices */
+@media (max-width: 452px) {
+  .about-title {
+    font-size: 1.75rem; /* Adjust title size */
+    margin-top: 15px; /* Adjust margin */
+  }
+
+  .about-para {
+    font-size: 1.1rem; /* Adjust paragraph font size */
+    margin-bottom: 20px; /* Adjust spacing */
+    padding: 0 10px; /* Adjust padding for mobile */
+  }
+}

@@ -4,29 +4,34 @@ import "../../index.css";
 function Hero() {
   return (
     <div className="hero">
-     <div
+<div
   style={{
     position: "absolute",
     width: "100%",
     top: "100px",
     left: "0",
     display: "flex",
-    justifyContent: "space-between",  // Left and right alignment
+    justifyContent: "space-between",  // Space between the elements on larger screens
     alignItems: "center",
     padding: "0 50px",
     boxSizing: "border-box",
+    flexWrap: "wrap",  // Allow wrapping for smaller screens
   }}
 >
   {/* Left side - Sadness */}
   <div
+    className="left-side"
     style={{
       display: "flex",
       alignItems: "center",
       gap: "20px",
-      fontWeight : "800",
+      fontWeight: "800",
       position: "relative",
-      left: "230px", // Positioning it relative to the container
-      top : "80px"
+      left: "0",  // Let it start at 0px to be responsive
+      top: "80px",
+      flex: "1 1 45%",  // Responsive size, grow and shrink as needed
+      justifyContent: "center",  // Align to the center
+      transition: "left 0.5s ease",  // Smooth transition for shifting
     }}
   >
     <span
@@ -50,14 +55,18 @@ function Hero() {
 
   {/* Right side - Happiness */}
   <div
+    className="right-side"
     style={{
       display: "flex",
       alignItems: "center",
       gap: "20px",
-      fontWeight : "800",
+      fontWeight: "800",
       position: "relative",
-      right: "220px",  // Positioning it relative to the container
-      top : "80px"
+      right: "0",  // Let it start at 0px to be responsive
+      top: "80px",
+      flex: "1 1 45%",  // Responsive size, grow and shrink as needed
+      justifyContent: "center",  // Align to the center
+      transition: "right 0.5s ease",  // Smooth transition for shifting
     }}
   >
     <span
@@ -81,22 +90,35 @@ function Hero() {
 </div>
 
 
-      {/* Image on the right */}
+      {/* Image on the center */}
       <div
-        style={{
-          position: "absolute",
-          width: "1009px",
-          height: "643px",
-          top: "300px",
-          right: "200px",
-          backgroundColor: "#fff", // Placeholder for the image
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-        }}
-      >
-     <img src="./media/images/main.png"></img>
-       </div> 
+  style={{
+    position: "absolute",
+    width: "80%", // Responsive width
+    maxWidth: "1009px", // Max width for larger screens
+    height: "auto", // Maintain aspect ratio
+    top: "350px", // Vertical position
+    left: "50%", // Center horizontally
+    transform: "translateX(-50%)", // Center horizontally
+    backgroundColor: "#fff", // Placeholder for the image
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    borderRadius: "15px", // Add border radius for rounded corners
+    boxSizing: "border-box", // Include border in width calculation
+  }}
+>
+  <img
+    src="./media/images/main.png"
+    alt="Main Image"
+    style={{
+      width: "100%", // Make the image responsive
+      height: "auto", // Maintain aspect ratio
+      objectFit: "contain", // Ensure the image fits within the container
+    }}
+  />
+</div>
+
 
        <p className="click-away">
        Just a click away 

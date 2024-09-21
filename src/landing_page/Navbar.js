@@ -68,9 +68,9 @@ function MainPage() {
                     Sign in
                   </button>
                 </Link>
-                <Link to="/signup" style={{ textDecoration: "none" }}>
+                <Link to="/signup" className="btn-res" style={{ textDecoration: "none" }}>
                   <button
-                    className="nav-btn nav-item"
+                    className="nav-btn2"
                     style={{
                       backgroundColor: "#fff",
                       border: "1px solid black",
