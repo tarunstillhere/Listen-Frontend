@@ -15,7 +15,7 @@ function Footer() {
                     </Link>
 
                     <Link to="/" style={{ textDecoration: "none" }}>
-                        <p className="logo-title" style={{ color: "#fff", fontSize: '1.5rem' }}>LISTNER</p>
+                        <p className="logo-title" style={{ color: "#fff", fontSize: '1.3rem' }}>LISTNER</p>
                     </Link>
                 </div>
 
@@ -36,7 +36,7 @@ function Footer() {
                 </div>
 
                 {/* Footer Paragraph */}
-                <p style={{ color: "#fff", marginTop: '20px', fontSize: '1.1rem' }}>Let's help each other</p>
+                <p style={{ color: "#fff", marginTop: '70px', fontSize: '1.1rem' }}>Let's help each other</p>
             </div>
         </footer>
     );

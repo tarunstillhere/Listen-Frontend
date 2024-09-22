@@ -20,6 +20,7 @@ function About() {
 
       {/* About section */}
       <div className="about mb-5">
+      <div className="gradient-aboutus">
         <div className="container">
           <div className="row">
             <div className="col">
@@ -47,6 +48,7 @@ function About() {
           </div>
         </div>
       </div>
+    </div>
     </div>
   );
 }

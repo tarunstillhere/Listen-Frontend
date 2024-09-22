@@ -6,6 +6,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
+  
 }
 
 code {
@@ -44,7 +45,7 @@ code {
 }
 
 /* Large devices (desktops, 1200px and up) */
-@media (min-width: 1200px) {
+@media (min-width: 1400px) {
   .herobtn {
     top: 1138px;
     left: 600px; /* Original left position for large screens */
@@ -55,17 +56,28 @@ code {
     left: 852px; /* Original left position for large screens */
   }
 }
+@media (min-width: 1200px) {
+  .herobtn {
+    top: 1138px;
+    left: 42%; /* Original left position for large screens */
+  }
+
+  .herobtn2 {
+    top: 1138px;
+    left: 60%; /* Original left position for large screens */
+  }
+}
 
 /* Medium devices (tablets, 768px to 1199px) */
 @media (max-width: 1199px) and (min-width: 768px) {
   .herobtn {
     top: 140%; /* Adjust top for tablet */
-    left: 50%;  /* Center the button horizontally */
+    left: 50%; /* Center the button horizontally */
   }
 
   .herobtn2 {
     top: 150%; /* Adjust top for tablet */
-    left: 50%;  /* Center the button horizontally */
+    left: 50%; /* Center the button horizontally */
   }
 }
 
@@ -103,12 +115,12 @@ code {
   }
 }
 /* Default styles for large screens */
-.left-side span, 
+.left-side span,
 .right-side span {
   font-size: 60px;
 }
 
-.left-side img, 
+.left-side img,
 .right-side img {
   width: 50px;
   height: 50px;
@@ -130,7 +142,7 @@ code {
     font-size: 45px;
   }
 
-  .left-side img, 
+  .left-side img,
   .right-side img {
     width: 40px;
     height: 40px;
@@ -151,12 +163,12 @@ code {
     justify-content: center;
   }
 
-  .left-side span, 
+  .left-side span,
   .right-side span {
     font-size: 35px;
   }
 
-  .left-side img, 
+  .left-side img,
   .right-side img {
     width: 35px;
     height: 35px;
@@ -173,12 +185,12 @@ code {
     margin-bottom: 20px;
   }
 
-  .left-side span, 
+  .left-side span,
   .right-side span {
     font-size: 25px;
   }
 
-  .left-side img, 
+  .left-side img,
   .right-side img {
     width: 25px;
     height: 25px;
@@ -217,7 +229,6 @@ code {
     top: 350px; /* Increase this value to push the image further down */
     margin-top: 50px; /* Additional margin if needed */
   }
-
 }
 
 /* Extra small screens (less than 480px) */
@@ -228,7 +239,6 @@ code {
     margin-top: 100px; /* Additional margin if needed */
   }
 }
-
 
 /* Styles for the stats container */
 .stats-container {
@@ -278,10 +288,10 @@ code {
     flex-direction: column; /* Stack items vertically on small screens */
     padding: 20px; /* Adjust padding for smaller screens */
     position: relative;
-        bottom: 200px;
-        height: 335px;
+    bottom: 200px;
+    height: 335px;
   }
-  
+
   .stats-item {
     margin-left: 0; /* Remove left margin when stacking vertically */
     margin-bottom: 20px; /* Add space between stacked items */
@@ -292,7 +302,6 @@ code {
     height: auto; /* Adjust height to fit content */
   }
 }
-
 
 .numbers,
 .heading {
@@ -313,7 +322,7 @@ code {
 
 .issue-container {
   margin: 0;
-  height: 816px;
+  height: 716px;
   width: 100%;
   box-sizing: border-box;
   background: linear-gradient(180deg, rgba(0, 0, 0, 0.8), rgba(16, 18, 21, 1));
@@ -332,10 +341,16 @@ code {
   margin-bottom: 40px;
   position: absolute;
   top: 80px;
+  left: 30%;
 }
 
 .slider-wrapper {
-  width: 80%;
+  position: relative;
+  top: 30%;
+  left: 5%;
+  width: 90%;
+ /* display: flex; */
+ /* justify-content: space-around; */
 }
 
 .slider-item {
@@ -362,16 +377,15 @@ code {
 /* Responsive styles */
 @media (max-width: 1024px) {
   .slider-item {
-      margin: 0 5px;
+    margin: 0 5px;
   }
 }
 
 @media (max-width: 768px) {
   .slider-item {
-      margin: 0;
+    margin: 0;
   }
 }
-
 
 .qna {
   font-size: 34px;
@@ -491,12 +505,12 @@ code {
 
 .social-links {
   width: 161.65px;
-  height: 26px;
+  height: 20px;
   position: relative;
-  top: 150px;
+  top: 0;
   margin: 0 auto;
   gap: 18px;
-  font-size: 30px;
+  font-size: 25px;
   gap: 18px;
 }
 
@@ -509,7 +523,7 @@ code {
 }
 
 .footer {
-  height: 700px;
+  height: 350px;
   background-color: #212121;
   display: flex;
   justify-content: flex-start;
@@ -577,6 +591,11 @@ code {
   font-weight: 500;
   line-height: 29.05px;
   text-align: center;
+}
+
+.about-btn:hover {
+  box-shadow: 2px 2px 3px rgb(85, 81, 81);
+  opacity: 0.7;
 }
 
 .para-container {
@@ -778,11 +797,10 @@ code {
   }
 }
 
-
 /* General styling */
 .about-page {
   text-align: center;
-  background-color: black;
+  /* background-color: black; */
 }
 
 /* Message text styling */
@@ -906,7 +924,7 @@ code {
 
   .herobtn,
   .herobtn2 {
-    width: 100%;
+    width: 80%;
     margin-bottom: 10px;
   }
 }
@@ -914,7 +932,7 @@ code {
 /* Reviews section background and alignment */
 .reviews-section {
   background: linear-gradient(180deg, #000000 0%, #434343 100%);
-  padding: 50px 0;
+  /* padding: 50px 0; */
   color: white;
 }
 
@@ -1183,4 +1201,146 @@ footer p {
     margin-bottom: 20px; /* Adjust spacing */
     padding: 0 10px; /* Adjust padding for mobile */
   }
+}
+.container-grid {
+  position: relative;
+  width: 100%;
+  height: 885px; /* Ensure the container has the same height as its children */
+}
+
+/* Common styles for both divs */
+.radial-div, 
+.grid-lines {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Radial gradient on the whole div */
+.radial-div {
+  background-color: #101215; /* Solid black background */
+  background-image: 
+    radial-gradient(circle at top,#6980fc, #323ca9 40%, transparent 70%);  z-index: 1; /* Lower z-index to keep the grid lines on top */
+  /* background-image: radial-gradient(circle at  top, rgba(0, 0, 255, 0.8), transparent 70%); */
+
+}
+
+/* Grid lines overlay */
+.grid-lines {
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.1) 1px, transparent 1px), /* Vertical grid lines */
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.1) 1px, transparent 1px); /* Horizontal grid lines */
+  background-size: 120px 120px;
+  z-index: 2; /* Higher z-index to make sure the grid lines appear on top of the radial gradient */
+  pointer-events: none; /* Prevent grid-lines from blocking interactions */
+}
+
+
+.container-gradient {
+  /* position: relative; */
+  width: 100%;
+  /* Ensure the container has the same height as its children */
+}
+
+/* Common styles for both divs */
+.gradient-aboutus, 
+.gradient-reviews {
+  /* position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); */
+}
+.gradient-aboutus {
+  width: 100%; /* Full width of the container */
+  height: 1000px; /* Height as per provided dimension */
+  position: relative; /* Positioning for placing the radial gradient */
+  
+  /* Solid black background */
+  background-color: #000; /* Black background */
+
+  /* Multiple radial gradients */
+  background-image: 
+    radial-gradient(circle at 5% 50%, #9412fb 0%, transparent 25%), /* First radial gradient */
+    radial-gradient(circle at 100% 0%, #4c9eff 0%, transparent 10%); /* Second radial gradient */
+
+  background-size: cover; /* Ensure it fills the container */
+  background-repeat: no-repeat; /* Prevent repetition of the gradients */
+}
+
+
+
+/* Grid lines overlay */
+.gradient-reviews {
+  width: 100%; /* Full width of the container */
+  height: 1000px; /* Height as per provided dimension */
+  position: relative; /* Positioning for placing the radial gradient */
+  
+  /* Solid black background */
+  background-color: #000; /* Black background */
+
+  /* Multiple radial gradients */
+  background-image: 
+    radial-gradient(circle at 5% 50%, #e6c51a 0%, transparent 25%), /* First radial gradient */
+    radial-gradient(circle at 90% 95%, #08cb62 0%, transparent 20%); /* Second radial gradient */
+
+  background-size: cover; /* Ensure it fills the container */
+  background-repeat: no-repeat; /* Prevent repetition of the gradients */
+}
+
+
+.navs-btn {
+  position: relative;
+  top: 30px;
+  width: 200px;
+  height: 60.25px;
+  gap: 10px;
+  border-radius: 10px;
+  border: 2px solid #fff5f5;
+  padding: 14px, 38px, 14px, 38px;
+  transform: translate(-0%, -60%);
+  background-color: white;
+  color: black;
+  transition: 0.3s;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 29.05px;
+  text-align: center;
+  margin-right: 15px;
+}
+
+.navs-btn:hover {
+  box-shadow: 2px 2px 3px rgb(85, 81, 81);
+  opacity: 0.7;
+}
+
+.navs-btn img {
+  height: 30px;
+  width: 30px;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  transition: top 0.3s ease-in-out;
+  z-index: 1000;
+}
+
+.navbar-visible {
+  top: 0;
+}
+
+.navbar-hidden {
+  top: -100px; /* Hide the navbar by moving it above the viewport */
+}
+
+.background-container {
+  padding-top: 80px; /* Add padding so that the content doesn't overlap the navbar */
 }

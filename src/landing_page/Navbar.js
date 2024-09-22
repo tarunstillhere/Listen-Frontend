@@ -1,14 +1,37 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "../index.css";
 import { Link } from "react-router-dom";
-import Hero from "./home/Hero"; // Assuming Hero is in the same folder
-import Stats from "./home/Stats"; // Assuming Stats is in the same folder
+import Hero from "./home/Hero";
+import Stats from "./home/Stats";
 
 function MainPage() {
+  const [showNavbar, setShowNavbar] = useState(true);
+  const [scrollPosition, setScrollPosition] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollPos = window.pageYOffset;
+
+      if (scrollPosition > currentScrollPos) {
+        // User is scrolling up
+        setShowNavbar(true);
+      } else {
+        // User is scrolling down
+        setShowNavbar(false);
+      }
+      setScrollPosition(currentScrollPos);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    // Clean up the event listener when component unmounts
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [scrollPosition]);
+
   return (
     <div className="background-container">
       {/* Navbar */}
-      <nav className="navbar sticky-top navbar-expand-lg">
+      <nav className={`navbar navbar-expand-lg ${showNavbar ? 'navbar-visible' : 'navbar-hidden'}`}>
         <div className="container-fluid">
           <div className="navbar-left">
             <Link
@@ -48,7 +71,7 @@ function MainPage() {
                     className="nav-link active"
                     aria-current="page"
                     to="/meeting"
-                    style={{ color: "white" }}
+                    style={{ color: "white",  marginRight : "15px" }}
                   >
                     Personal Interaction
                   </Link>
@@ -58,30 +81,23 @@ function MainPage() {
                     className="nav-link active"
                     aria-current="page"
                     to="/services"
-                    style={{ color: "white" }}
+                    style={{ color: "white", marginRight : "15px" }}
+              
                   >
                     Upcoming Services
                   </Link>
                 </li>
-                <Link to="/signin" style={{ textDecoration: "none" }}>
-                  <button className="nav-btn nav-item" type="submit">
-                    Sign in
-                  </button>
-                </Link>
-                <Link to="/signup" className="btn-res" style={{ textDecoration: "none" }}>
-                  <button
-                    className="nav-btn2"
-                    style={{
-                      backgroundColor: "#fff",
-                      border: "1px solid black",
-                      color: "#000",
-                      marginLeft: "25px",
-                    }}
-                    type="submit"
-                  >
-                    Register
-                  </button>
-                </Link>
+              <li>
+              <a href="https://api.whatsapp.com/send?phone=918700103640" target="_blank" rel="noopener noreferrer" className="navs-btn p-4 pt-2 pb-2" style={{ display: 'inline-flex', textDecoration: 'none' }}>
+  <img src="./media/images/msg.png" alt="Chat now" style={{ marginRight: "20px" }} />
+  Chat now
+</a>
+
+<button className="navs-btn p-4 pt-2 pb-2" style={{  width : "196px" }}>
+  <img src="./media/images/phone.png" alt="Call us" style={{ marginRight: "20px",}} />
+  Call us
+</button>
+        </li>
               </ul>
             </form>
           </div>
@@ -98,3 +114,4 @@ function MainPage() {
 }
 
 export default MainPage;
+
