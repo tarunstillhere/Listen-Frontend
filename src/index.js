@@ -23,7 +23,7 @@ root.render(
       <Route path='/' element={<HomePage/>}/>
       <Route path='/services' element={<ServicesPage/>}/>
       <Route path='/talk' element={<ExpertPage/>}/>
-      <Route path='meeting' element={<MeetingPage/>}/>
+      <Route path='/meeting' element={<MeetingPage/>}/>
       <Route path='/signin' element={<SigninPage/>}/>
       <Route path='/signup' element={<SignupPage/>}/>
       <Route path='*' element={<NotFound/>}/>

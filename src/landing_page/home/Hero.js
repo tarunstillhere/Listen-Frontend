@@ -99,8 +99,7 @@ function Hero() {
     height: "auto", // Maintain aspect ratio
     top: "350px", // Vertical position
     left: "50%", // Center horizontally
-    transform: "translateX(-50%)", // Center horizontally
-    backgroundColor: "#fff", // Placeholder for the image
+    transform: "translateX(-50%)", // Placeholder for the image
     display: "flex",
     justifyContent: "center",
     alignItems: "center",

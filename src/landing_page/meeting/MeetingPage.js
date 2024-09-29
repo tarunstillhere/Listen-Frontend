@@ -7,7 +7,6 @@ function MeetingPage() {
     return ( 
         <div>
             <Meeting/>
-            <About/>
         </div>
      );
 }

@@ -33,11 +33,11 @@ function Reviews() {
             <div className="card review-card">
               <img
                 className="card-img-top review-img"
-                src="./media/images/hero.png"
+                src="./media/images/Tarun.png"
                 alt="Review 2"
               />
               <div className="card-body">
-                <h5 className="card-title text-center">Jatin Jindal</h5>
+                <h5 className="card-title text-center">Tarun Chauhan</h5>
                 <p className="card-text text-center">
                   I never thought talking to someone would make such a
                   difference. The support I received here has been so comforting

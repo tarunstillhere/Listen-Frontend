@@ -6,7 +6,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
-  
+  background-color: #434343;
 }
 
 code {
@@ -82,7 +82,7 @@ code {
 }
 
 /* Small devices (mobiles, less than 768px) */
-@media (max-width: 767px) {
+@media (max-width: 768px) {
   .herobtn {
     top: 110%; /* Adjust top for small screens */
     left: 50%; /* Center the button horizontally */
@@ -95,6 +95,24 @@ code {
     left: 50%; /* Center the button horizontally */
     width: 70%; /* Increase width to fit smaller screens */
     font-size: 20px; /* Adjust font size */
+    justify-content: center;
+  }
+}
+
+/* Extra small devices (smaller phones, less than 480px) */
+@media (max-width: 576px) {
+  .herobtn {
+    top: 95%; /* Further adjust top */
+    left: 50%; /* Center the button horizontally */
+    width: 80%; /* Max width for very small screens */
+    font-size: 16px; /* Reduce font size */
+  }
+
+  .herobtn2 {
+    top: 105%; /* Further adjust top */
+    left: 50%; /* Center the button horizontally */
+    width: 80%; /* Max width for very small screens */
+    font-size: 16px; /* Reduce font size */
   }
 }
 
@@ -288,7 +306,7 @@ code {
     flex-direction: column; /* Stack items vertically on small screens */
     padding: 20px; /* Adjust padding for smaller screens */
     position: relative;
-    bottom: 200px;
+    bottom: 180px;
     height: 335px;
   }
 
@@ -302,6 +320,7 @@ code {
     height: auto; /* Adjust height to fit content */
   }
 }
+
 
 .numbers,
 .heading {
@@ -333,16 +352,42 @@ code {
   align-items: center;
 }
 
+/* Base styles for heading */
 .issue-heading {
   color: white;
   filter: blur(0.5px);
-  font-size: 36px;
+  font-size: 36px; /* Base font size */
   font-weight: 800;
   margin-bottom: 40px;
-  position: absolute;
-  top: 80px;
-  left: 30%;
+  text-align: center; /* Center text */
+  position: relative; /* Change to relative for centering */
+  left: 50%; /* Center horizontally */
+  top: 20%;
+  transform: translateX(-50%); /* Adjust for centering */
 }
+
+/* Responsive styles */
+@media (max-width: 992px) { /* Tablets and smaller devices */
+  .issue-heading {
+    font-size: 30px; /* Adjust font size */
+    margin-bottom: 30px; /* Adjust margin */
+  }
+}
+
+@media (max-width: 768px) { /* Mobile devices */
+  .issue-heading {
+    font-size: 24px; /* Adjust font size */
+    margin-bottom: 20px; /* Adjust margin */
+  }
+}
+
+@media (max-width: 576px) { /* Extra small devices */
+  .issue-heading {
+    font-size: 20px; /* Adjust font size */
+    margin-bottom: 15px; /* Adjust margin */
+  }
+}
+
 
 .slider-wrapper {
   position: relative;
@@ -717,6 +762,36 @@ code {
   background-color: black;
 }
 
+/* Media Queries */
+
+/* For screens smaller than 1200px (Large desktops) */
+@media (max-width: 1199px) {
+  .background-container {
+    min-height: 180vh; /* Adjust height for large desktops */
+  }
+}
+
+/* For screens smaller than 992px (Tablets and small desktops) */
+@media (max-width: 991px) {
+  .background-container {
+    min-height: 180vh; /* Adjust height for tablets and small desktops */
+  }
+}
+
+/* For screens smaller than 768px (Small tablets and mobile devices) */
+@media (max-width: 767px) {
+  .background-container {
+    min-height: 180vh; /* Adjust height for small tablets and mobile devices */
+  }
+}
+
+/* For screens smaller than 576px (Extra small devices) */
+@media (max-width: 575px) {
+  .background-container {
+    min-height: 160vh; /* Adjust height for extra small devices */
+  }
+}
+
 /* Transparent sections */
 .navbar,
 .hero,
@@ -781,9 +856,19 @@ code {
 @media (max-width: 768px) {
   .click-away {
     font-size: 3rem; /* Further adjust font size */
-    top: 100%; /* Slight adjustment */
+    top: 95%; /* Slight adjustment */
     left: 50%; /* Center horizontally */
     transform: translate(-50%, -54%); /* Adjust centering */
+  }
+}
+
+/* Extra small screens (less than 480px) */
+@media (max-width: 576px) {
+  .click-away {
+    font-size: 2rem; /* Further adjust font size */
+    top: 85%; /* Slight adjustment */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -56%); /* Adjust centering */
   }
 }
 
@@ -791,7 +876,7 @@ code {
 @media (max-width: 480px) {
   .click-away {
     font-size: 2rem; /* Further adjust font size */
-    top: 80%; /* Slight adjustment */
+    top: 82%; /* Slight adjustment */
     left: 50%; /* Center horizontally */
     transform: translate(-50%, -56%); /* Adjust centering */
   }
@@ -954,6 +1039,7 @@ code {
   max-width: 308px; /* Set a max-width to prevent too large cards */
   margin: auto;
   transition: transform 0.2s;
+ 
 }
 
 .review-card:hover {
@@ -983,6 +1069,27 @@ code {
   padding: 20px;
   color: #e0e0e0;
   text-align: justify;
+}
+
+/* Media Queries */
+@media (max-width: 992px) {
+
+  .review-header {
+    font-size: 2rem; /* Smaller font size on smaller screens */
+  }
+
+  .review-consent {
+
+  }
+  .review-card {
+    width: 100%; /* Full width on smaller screens */
+    max-width: none; /* Remove max-width constraint */
+  }
+
+  .review-img {
+    width: 80px; /* Adjust image size */
+    height: 80px; /* Adjust image size */
+  }
 }
 
 /* Media Queries */
@@ -1223,11 +1330,36 @@ footer p {
 /* Radial gradient on the whole div */
 .radial-div {
   background-color: #101215; /* Solid black background */
-  background-image: 
-    radial-gradient(circle at top,#6980fc, #323ca9 40%, transparent 70%);  z-index: 1; /* Lower z-index to keep the grid lines on top */
-  /* background-image: radial-gradient(circle at  top, rgba(0, 0, 255, 0.8), transparent 70%); */
-
+  background-image: radial-gradient(circle at top, #6980fc, #323ca9 40%, transparent 70%);
+  background-size: cover; /* Ensure the background covers the div */
+  z-index: 1; /* Lower z-index to keep the grid lines on top */
 }
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+  .radial-div {
+    background-image: radial-gradient(circle at top, #6980fc, #323ca9 50%, transparent 80%);
+  }
+}
+
+@media (max-width: 992px) {
+  .radial-div {
+    background-image: radial-gradient(circle at top, #6980fc, #323ca9 60%, transparent 90%);
+  }
+}
+
+@media (max-width: 768px) {
+  .radial-div {
+    background-image: radial-gradient(circle at top, #6980fc, #323ca9 70%, transparent 100%);
+  }
+}
+
+@media (max-width: 576px) {
+  .radial-div {
+    background-image: radial-gradient(circle at top, #6980fc, #323ca9 80%, transparent 100%);
+  }
+}
+
 
 /* Grid lines overlay */
 .grid-lines {
@@ -1245,18 +1377,6 @@ footer p {
   width: 100%;
   /* Ensure the container has the same height as its children */
 }
-
-/* Common styles for both divs */
-.gradient-aboutus, 
-.gradient-reviews {
-  /* position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  border-radius: 15px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); */
-}
 .gradient-aboutus {
   width: 100%; /* Full width of the container */
   height: 1000px; /* Height as per provided dimension */
@@ -1267,32 +1387,60 @@ footer p {
 
   /* Multiple radial gradients */
   background-image: 
-    radial-gradient(circle at 5% 50%, #9412fb 0%, transparent 25%), /* First radial gradient */
-    radial-gradient(circle at 100% 0%, #4c9eff 0%, transparent 10%); /* Second radial gradient */
+    radial-gradient(circle at 5% 50%, #9412fb -90%, transparent 25%); /* First radial gradient */
 
   background-size: cover; /* Ensure it fills the container */
   background-repeat: no-repeat; /* Prevent repetition of the gradients */
 }
 
-
-
-/* Grid lines overlay */
-.gradient-reviews {
-  width: 100%; /* Full width of the container */
-  height: 1000px; /* Height as per provided dimension */
-  position: relative; /* Positioning for placing the radial gradient */
+.gradient-aboutus::after {
+  content: "";
+  position: absolute;
+  top: -150px; /* Extend the gradient into the top of the container */
+  right: -250px; /* Position it towards the right side */
+  width: 600px; /* Control the size of the gradient */
+  height: 500px; /* Height to create a circular effect */
   
-  /* Solid black background */
-  background-color: #000; /* Black background */
-
-  /* Multiple radial gradients */
-  background-image: 
-    radial-gradient(circle at 5% 50%, #e6c51a 0%, transparent 25%), /* First radial gradient */
-    radial-gradient(circle at 90% 95%, #08cb62 0%, transparent 20%); /* Second radial gradient */
-
-  background-size: cover; /* Ensure it fills the container */
-  background-repeat: no-repeat; /* Prevent repetition of the gradients */
+  background: radial-gradient(circle at 50% 50%, #00aaff -90%, transparent 60%); /* Blue gradient */
+  z-index: 2; /* Ensure this overlaps other content */
+  border-radius: 50%; /* Make it circular */
+  pointer-events: none; /* Ensure it doesn’t interfere with user interactions */
 }
+
+
+
+/* Reviews Section */
+.gradient-reviews {
+  width: 100%;
+  height: 700px;
+  position: relative;
+  background-color: #000;
+  
+  /* Radial gradients */
+  background-image: 
+    radial-gradient(circle at 5% 50%, #e6c51a -90%, transparent 25%); /* Yellow gradient */
+  
+
+  background-size: cover;
+  background-repeat: no-repeat;
+  z-index: 1;
+}
+
+/* Green gradient extending into footer with circular curve */
+.gradient-reviews::after {
+  content: "";
+  position: absolute;
+  bottom: -150px; /* Adjust this to extend gradient into footer */
+  right: -150px; /* Move it slightly to the right for better centering */
+  width: 600px; /* Control the size of the gradient to make it larger */
+  height: 500px; /* Larger height to create a circular effect */
+  
+  background: radial-gradient(circle at 50% 50%, #08cb62 -90%, transparent 65%);
+  z-index: 2;
+  border-radius: 50%; /* Make it circular */
+}
+
+
 
 
 .navs-btn {
@@ -1343,4 +1491,355 @@ footer p {
 
 .background-container {
   padding-top: 80px; /* Add padding so that the content doesn't overlap the navbar */
+}
+
+
+
+/* Add this to your CSS file */
+
+.navbar-collapse {
+  transition: height 0.3s ease;
+}
+
+.navbar-collapse.show {
+  display: block; /* Ensures the menu is visible when open */
+}
+
+/* Base styles for buttons */
+.navs-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  padding: 12px 24px; /* Base padding */
+  font-size: 22px; /* Base font size */
+  width: 196px; /* Base width for buttons */
+  transition: margin-top 0.3s ease, padding 0.3s ease, font-size 0.3s ease;
+}
+
+/* Responsive styles for smaller screens */
+@media (max-width: 992px) { /* Tablets and smaller devices */
+  .navs-btn {
+    padding: 10px 20px; /* Adjust padding */
+    font-size: 14px; /* Adjust font size */
+    width: 180px; /* Adjust width */
+  }
+}
+
+@media (max-width: 768px) { /* Mobile devices */
+  .navs-btn {
+    padding: 8px 16px; /* Adjust padding */
+    font-size: 12px; /* Adjust font size */
+    width: 160px; /* Adjust width */
+  }
+}
+
+@media (max-width: 576px) { /* Extra small devices */
+  .navs-btn {
+    padding: 6px 12px; /* Adjust padding */
+    font-size: 10px; /* Adjust font size */
+    width: 140px; /* Adjust width */
+  }
+}
+
+/* Navbar Styles */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #333;
+  color: white;
+  width: 100%; /* Ensure it takes the full width of the screen */
+  box-sizing: border-box; /* Include padding in the element's total width */
+}
+
+
+
+.navbar-toggler {
+  display: none;
+  background-color: transparent;
+  border: none;
+  padding: 5px;
+  cursor: pointer;
+  color: white;
+}
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+  .navbar-nav {
+    display: none;
+  }
+
+  .navbar-toggler {
+    display: block;
+    margin-left: auto; /* Ensures the toggler stays on the right */
+  }
+
+  .navbar-toggler-icon {
+    font-size: 24px; /* Adjust the size of the icon */
+    width: 30px;
+    height: 30px;
+  }
+
+  .collapse.show .navbar-nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+}
+
+@media (max-width: 576px) {
+  .navbar {
+    padding: 10px;
+  }
+
+  .navbar-toggler {
+    display: block;
+    margin-right: 0; /* Remove any extra margin */
+    padding: 8px;
+  }
+
+  .navbar-toggler-icon {
+    font-size: 1.5rem;
+    width: 30px;
+    height: 30px;
+  }
+
+  .navbar-nav {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .navbar-nav .nav-item {
+    margin-bottom: 15px;
+  }
+}
+
+/* Media query for tablets and smaller screens */
+@media (max-width: 1080px) {
+  .about {
+    max-width: 95%;  /* Adjust max-width to 90% of the viewport width */
+  }
+}
+
+/* Media query for mobile devices */
+@media (max-width: 988px) {
+  .about {
+    max-width: 90%;  /* Adjust max-width to 95% of the viewport width */
+  }
+}
+
+
+/* Media query for smaller screens */
+@media (max-width: 1132px) {
+  .para-container {
+    /* Adjust styles for the container if needed */
+    width: 90%;
+  }
+}
+
+@media (max-width: 1004px) {
+  .para-container {
+    /* Adjust styles for the container if needed */
+    width: 85%;
+  }
+  .about-para {
+    font-size: 1.3rem;
+    position: relative;
+    left: 10%;
+  }
+  .about {
+    height: 90%;
+    position: relative;
+    left: 5%;
+  }
+}
+
+
+/* Media query for smaller screens */
+@media (max-width: 988px) {
+  .para-container {
+    /* Adjust styles for the container if needed */
+    width: 75%;
+  }
+
+  .about-para {
+    font-size: 1.1rem;
+    position: relative;
+    left: 15%;
+  }
+  .about {
+    height: 90%;
+    position: relative;
+    left: 5%;
+  }
+}
+/* Media query for smaller screens */
+@media (max-width: 890px) {
+  .para-container {
+    /* Adjust styles for the container if needed */
+    width: 70%;
+  }
+
+  .about-para {
+    font-size: 1rem;
+    position: relative;
+    left: 20%;
+  }
+  .about {
+    height: 90%;
+    position: relative;
+    left: 5%;
+  }
+}
+/* Media query for smaller screens */
+@media (max-width: 835px) {
+  .para-container {
+    /* Adjust styles for the container if needed */
+    width: 65%;
+  }
+
+  .about-para {
+    font-size: 0.8rem;
+    position: relative;
+    left: 30%;
+    
+    /* Word breaking */
+    word-break: break-word;     /* Break long words */
+    overflow-wrap: break-word;  /* Ensure long words break within container */
+    hyphens: auto;              /* Optional: Adds hyphens where words are broken */
+  }
+
+  .about {
+    height: 90%;
+    position: relative;
+    left: 5%;
+  }
+}
+/* Media query for smaller screens */
+@media (max-width: 776px) {
+  .para-container {
+    /* Adjust styles for the container if needed */
+    width: 55%;
+  }
+
+  .about-para {
+    font-size: 0.6rem;
+    position: relative;
+    left: 45%;
+    
+    /* Word breaking */
+    word-break: break-word;     /* Break long words */
+    overflow-wrap: break-word;  /* Ensure long words break within container */
+    hyphens: auto;              /* Optional: Adds hyphens where words are broken */
+  }
+
+  .about {
+    height: 90%;
+    position: relative;
+    left: 5%;
+  }
+}
+/* Media query for smaller screens */
+@media (max-width: 618px) {
+  .para-container {
+    /* Adjust styles for the container if needed */
+    width: 30%;
+  }
+
+  .about-para {
+    font-size: 0.6rem;
+    position: relative;
+    left: 130%;
+    
+    /* Word breaking */
+    word-break: break-word;     /* Break long words */
+    overflow-wrap: break-word;  /* Ensure long words break within container */
+    hyphens: auto;              /* Optional: Adds hyphens where words are broken */
+  }
+
+  .about {
+    height: 90%;
+    position: relative;
+    left: 5%;
+  }
+}
+/* Media query for smaller screens */
+@media (max-width: 305px) {
+  .para-container {
+    /* Adjust styles for the container if needed */
+    width: 20%;
+  }
+
+  .about-para {
+    font-size: 0.6rem;
+    position: relative;
+    left: 235%;
+    
+    /* Word breaking */
+    word-break: break-word;     /* Break long words */
+    overflow-wrap: break-word;  /* Ensure long words break within container */
+    hyphens: auto;              /* Optional: Adds hyphens where words are broken */
+  }
+
+  .about {
+    height: 90%;
+    position: relative;
+    left: 5%;
+  }
+}
+@media (max-width: 992px) {
+  .gradient-reviews {
+    height: 800px;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .gradient-reviews {
+    height: 1250px;
+  }
+}
+
+@media (max-width: 453px) {
+  .gradient-reviews {
+    height: 1450px;
+  }
+}
+
+
+@media (max-width: 333px) {
+  .gradient-reviews {
+    height: 1850px;
+  }
+}
+
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+.form{
+  display: flex;
+  flex-direction: column;
+  padding: 20px
+}
+
+.form input {
+  height: 50px;
+  margin-top: 20px;
+  border-radius: 10px;
+  padding: 5px;
+
+}
+
+.form :last-child{
+  width: 30%;
+  background-color: green;
+}
+
+.button:hover {
+  background-color: #00aaff;
+  color: black;
 }
