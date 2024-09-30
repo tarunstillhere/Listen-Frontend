@@ -142,16 +142,20 @@ function MainPage() {
 
                   <button
                     className="navs-btn p-4 pt-2 pb-2"
-                    style={{
-                      marginTop: menuOpen ? "30px" : "0px",
-                    }}
+                    style={{ width: "196px" }}
                   >
                     <img
                       src="./media/images/phone.png"
                       alt="Call us"
-                      style={{ marginRight: "10px" }}
+                      style={{ marginRight: "20px" }}
                     />
-                    Call us
+                    <a
+                      href="tel:+91 8700103640"
+                      style={{ textDecoration: "none", color: "#000" }}
+                    >
+                      {" "}
+                      Call us{" "}
+                    </a>
                   </button>
                 </li>
               </ul>
