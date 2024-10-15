@@ -321,7 +321,6 @@ code {
   }
 }
 
-
 .numbers,
 .heading {
   margin: 0;
@@ -367,35 +366,37 @@ code {
 }
 
 /* Responsive styles */
-@media (max-width: 992px) { /* Tablets and smaller devices */
+@media (max-width: 992px) {
+  /* Tablets and smaller devices */
   .issue-heading {
     font-size: 30px; /* Adjust font size */
     margin-bottom: 30px; /* Adjust margin */
   }
 }
 
-@media (max-width: 768px) { /* Mobile devices */
+@media (max-width: 768px) {
+  /* Mobile devices */
   .issue-heading {
     font-size: 24px; /* Adjust font size */
     margin-bottom: 20px; /* Adjust margin */
   }
 }
 
-@media (max-width: 576px) { /* Extra small devices */
+@media (max-width: 576px) {
+  /* Extra small devices */
   .issue-heading {
     font-size: 20px; /* Adjust font size */
     margin-bottom: 15px; /* Adjust margin */
   }
 }
 
-
 .slider-wrapper {
   position: relative;
   top: 30%;
   left: 5%;
   width: 90%;
- /* display: flex; */
- /* justify-content: space-around; */
+  /* display: flex; */
+  /* justify-content: space-around; */
 }
 
 .slider-item {
@@ -480,8 +481,8 @@ code {
 }
 
 .logo {
-  width: 62px;
-  height: 62px;
+  width: 140px;
+  height: 110px;
 }
 
 .logo-title {
@@ -1039,7 +1040,6 @@ code {
   max-width: 308px; /* Set a max-width to prevent too large cards */
   margin: auto;
   transition: transform 0.2s;
- 
 }
 
 .review-card:hover {
@@ -1073,13 +1073,11 @@ code {
 
 /* Media Queries */
 @media (max-width: 992px) {
-
   .review-header {
     font-size: 2rem; /* Smaller font size on smaller screens */
   }
 
   .review-consent {
-
   }
   .review-card {
     width: 100%; /* Full width on smaller screens */
@@ -1316,7 +1314,7 @@ footer p {
 }
 
 /* Common styles for both divs */
-.radial-div, 
+.radial-div,
 .grid-lines {
   position: absolute;
   top: 0;
@@ -1330,7 +1328,12 @@ footer p {
 /* Radial gradient on the whole div */
 .radial-div {
   background-color: #101215; /* Solid black background */
-  background-image: radial-gradient(circle at top, #6980fc, #323ca9 40%, transparent 70%);
+  background-image: radial-gradient(
+    circle at top,
+    #6980fc,
+    #323ca9 40%,
+    transparent 70%
+  );
   background-size: cover; /* Ensure the background covers the div */
   z-index: 1; /* Lower z-index to keep the grid lines on top */
 }
@@ -1338,39 +1341,61 @@ footer p {
 /* Responsive adjustments */
 @media (max-width: 1200px) {
   .radial-div {
-    background-image: radial-gradient(circle at top, #6980fc, #323ca9 50%, transparent 80%);
+    background-image: radial-gradient(
+      circle at top,
+      #6980fc,
+      #323ca9 50%,
+      transparent 80%
+    );
   }
 }
 
 @media (max-width: 992px) {
   .radial-div {
-    background-image: radial-gradient(circle at top, #6980fc, #323ca9 60%, transparent 90%);
+    background-image: radial-gradient(
+      circle at top,
+      #6980fc,
+      #323ca9 60%,
+      transparent 90%
+    );
   }
 }
 
 @media (max-width: 768px) {
   .radial-div {
-    background-image: radial-gradient(circle at top, #6980fc, #323ca9 70%, transparent 100%);
+    background-image: radial-gradient(
+      circle at top,
+      #6980fc,
+      #323ca9 70%,
+      transparent 100%
+    );
   }
 }
 
 @media (max-width: 576px) {
   .radial-div {
-    background-image: radial-gradient(circle at top, #6980fc, #323ca9 80%, transparent 100%);
+    background-image: radial-gradient(
+      circle at top,
+      #6980fc,
+      #323ca9 80%,
+      transparent 100%
+    );
   }
 }
 
-
 /* Grid lines overlay */
 .grid-lines {
-  background-image: 
-    linear-gradient(to right, rgba(255, 255, 255, 0.1) 1px, transparent 1px), /* Vertical grid lines */
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.1) 1px, transparent 1px); /* Horizontal grid lines */
+  background-image: linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0.1) 1px,
+      transparent 1px
+    ),
+    /* Vertical grid lines */
+      linear-gradient(to bottom, rgba(255, 255, 255, 0.1) 1px, transparent 1px); /* Horizontal grid lines */
   background-size: 120px 120px;
   z-index: 2; /* Higher z-index to make sure the grid lines appear on top of the radial gradient */
   pointer-events: none; /* Prevent grid-lines from blocking interactions */
 }
-
 
 .container-gradient {
   /* position: relative; */
@@ -1381,13 +1406,16 @@ footer p {
   width: 100%; /* Full width of the container */
   height: 1000px; /* Height as per provided dimension */
   position: relative; /* Positioning for placing the radial gradient */
-  
+
   /* Solid black background */
   background-color: #000; /* Black background */
 
   /* Multiple radial gradients */
-  background-image: 
-    radial-gradient(circle at 5% 50%, #9412fb -90%, transparent 25%); /* First radial gradient */
+  background-image: radial-gradient(
+    circle at 5% 50%,
+    #9412fb -90%,
+    transparent 25%
+  ); /* First radial gradient */
 
   background-size: cover; /* Ensure it fills the container */
   background-repeat: no-repeat; /* Prevent repetition of the gradients */
@@ -1397,17 +1425,19 @@ footer p {
   content: "";
   position: absolute;
   top: -150px; /* Extend the gradient into the top of the container */
-  right: -250px; /* Position it towards the right side */
-  width: 600px; /* Control the size of the gradient */
-  height: 500px; /* Height to create a circular effect */
-  
-  background: radial-gradient(circle at 50% 50%, #00aaff -90%, transparent 60%); /* Blue gradient */
+  right: 0; /* Position it towards the right side */
+  width: 100%; /* Control the size of the gradient */
+  height: 100%; /* Height to create a circular effect */
+
+  background: radial-gradient(
+    circle at 50% 50%,
+    #00aaff -100%,
+    transparent 60%
+  ); /* Blue gradient */
   z-index: 2; /* Ensure this overlaps other content */
   border-radius: 50%; /* Make it circular */
   pointer-events: none; /* Ensure it doesn’t interfere with user interactions */
 }
-
-
 
 /* Reviews Section */
 .gradient-reviews {
@@ -1415,11 +1445,13 @@ footer p {
   height: 700px;
   position: relative;
   background-color: #000;
-  
+
   /* Radial gradients */
-  background-image: 
-    radial-gradient(circle at 5% 50%, #e6c51a -90%, transparent 25%); /* Yellow gradient */
-  
+  background-image: radial-gradient(
+    circle at 5% 50%,
+    #e6c51a -90%,
+    transparent 25%
+  ); /* Yellow gradient */
 
   background-size: cover;
   background-repeat: no-repeat;
@@ -1431,17 +1463,56 @@ footer p {
   content: "";
   position: absolute;
   bottom: -150px; /* Adjust this to extend gradient into footer */
-  right: -150px; /* Move it slightly to the right for better centering */
-  width: 600px; /* Control the size of the gradient to make it larger */
-  height: 500px; /* Larger height to create a circular effect */
-  
-  background: radial-gradient(circle at 50% 50%, #08cb62 -90%, transparent 65%);
+  right: 0; /* Move it slightly to the right for better centering */
+  width: 100%; /* Control the size of the gradient to make it larger */
+  height: 100%; /* Larger height to create a circular effect */
+
+  background: radial-gradient(
+    circle at 50% 50%,
+    #08cb62 -100%,
+    transparent 50%
+  );
   z-index: 2;
   border-radius: 50%; /* Make it circular */
 }
 
+/* Responsive Styles */
+@media (max-width: 992px) {
+  .gradient-reviews::after {
+    content: "";
+    position: absolute;
+    bottom: -150px; /* Adjust this to extend gradient into footer */
+    right: 0; /* Move it slightly to the right for better centering */
+    width: 100%; /* Control the size of the gradient to make it larger */
+    height: 500px; /* Larger height to create a circular effect */
 
+    background: radial-gradient(
+      circle at 50% 50%,
+      #08cb62 -90%,
+      transparent 65%
+    );
+    z-index: 2;
+    border-radius: 50%; /* Make it circular */
+  }
 
+  .gradient-aboutus::after {
+    content: "";
+    position: absolute;
+    top: -150px; /* Extend the gradient into the top of the container */
+    right: 0; /* Position it towards the right side */
+    width: 100%; /* Control the size of the gradient */
+    height: 500px; /* Height to create a circular effect */
+
+    background: radial-gradient(
+      circle at 50% 50%,
+      #00aaff -90%,
+      transparent 60%
+    ); /* Blue gradient */
+    z-index: 2; /* Ensure this overlaps other content */
+    border-radius: 50%; /* Make it circular */
+    pointer-events: none; /* Ensure it doesn’t interfere with user interactions */
+  }
+}
 
 .navs-btn {
   position: relative;
@@ -1493,8 +1564,6 @@ footer p {
   padding-top: 80px; /* Add padding so that the content doesn't overlap the navbar */
 }
 
-
-
 /* Add this to your CSS file */
 
 .navbar-collapse {
@@ -1518,7 +1587,8 @@ footer p {
 }
 
 /* Responsive styles for smaller screens */
-@media (max-width: 992px) { /* Tablets and smaller devices */
+@media (max-width: 992px) {
+  /* Tablets and smaller devices */
   .navs-btn {
     padding: 10px 20px; /* Adjust padding */
     font-size: 14px; /* Adjust font size */
@@ -1526,7 +1596,8 @@ footer p {
   }
 }
 
-@media (max-width: 768px) { /* Mobile devices */
+@media (max-width: 768px) {
+  /* Mobile devices */
   .navs-btn {
     padding: 8px 16px; /* Adjust padding */
     font-size: 12px; /* Adjust font size */
@@ -1534,7 +1605,8 @@ footer p {
   }
 }
 
-@media (max-width: 576px) { /* Extra small devices */
+@media (max-width: 576px) {
+  /* Extra small devices */
   .navs-btn {
     padding: 6px 12px; /* Adjust padding */
     font-size: 10px; /* Adjust font size */
@@ -1553,8 +1625,6 @@ footer p {
   width: 100%; /* Ensure it takes the full width of the screen */
   box-sizing: border-box; /* Include padding in the element's total width */
 }
-
-
 
 .navbar-toggler {
   display: none;
@@ -1587,6 +1657,9 @@ footer p {
     flex-direction: column;
     align-items: center;
     gap: 10px;
+    background-color: #434343;
+    border-radius: 5px;
+    padding: 2rem;
   }
 }
 
@@ -1620,17 +1693,16 @@ footer p {
 /* Media query for tablets and smaller screens */
 @media (max-width: 1080px) {
   .about {
-    max-width: 95%;  /* Adjust max-width to 90% of the viewport width */
+    max-width: 95%; /* Adjust max-width to 90% of the viewport width */
   }
 }
 
 /* Media query for mobile devices */
 @media (max-width: 988px) {
   .about {
-    max-width: 90%;  /* Adjust max-width to 95% of the viewport width */
+    max-width: 90%; /* Adjust max-width to 95% of the viewport width */
   }
 }
-
 
 /* Media query for smaller screens */
 @media (max-width: 1132px) {
@@ -1656,7 +1728,6 @@ footer p {
     left: 5%;
   }
 }
-
 
 /* Media query for smaller screens */
 @media (max-width: 988px) {
@@ -1705,11 +1776,11 @@ footer p {
     font-size: 0.8rem;
     position: relative;
     left: 30%;
-    
+
     /* Word breaking */
-    word-break: break-word;     /* Break long words */
-    overflow-wrap: break-word;  /* Ensure long words break within container */
-    hyphens: auto;              /* Optional: Adds hyphens where words are broken */
+    word-break: break-word; /* Break long words */
+    overflow-wrap: break-word; /* Ensure long words break within container */
+    hyphens: auto; /* Optional: Adds hyphens where words are broken */
   }
 
   .about {
@@ -1729,11 +1800,11 @@ footer p {
     font-size: 0.6rem;
     position: relative;
     left: 45%;
-    
+
     /* Word breaking */
-    word-break: break-word;     /* Break long words */
-    overflow-wrap: break-word;  /* Ensure long words break within container */
-    hyphens: auto;              /* Optional: Adds hyphens where words are broken */
+    word-break: break-word; /* Break long words */
+    overflow-wrap: break-word; /* Ensure long words break within container */
+    hyphens: auto; /* Optional: Adds hyphens where words are broken */
   }
 
   .about {
@@ -1753,11 +1824,11 @@ footer p {
     font-size: 0.6rem;
     position: relative;
     left: 130%;
-    
+
     /* Word breaking */
-    word-break: break-word;     /* Break long words */
-    overflow-wrap: break-word;  /* Ensure long words break within container */
-    hyphens: auto;              /* Optional: Adds hyphens where words are broken */
+    word-break: break-word; /* Break long words */
+    overflow-wrap: break-word; /* Ensure long words break within container */
+    hyphens: auto; /* Optional: Adds hyphens where words are broken */
   }
 
   .about {
@@ -1777,11 +1848,11 @@ footer p {
     font-size: 0.6rem;
     position: relative;
     left: 235%;
-    
+
     /* Word breaking */
-    word-break: break-word;     /* Break long words */
-    overflow-wrap: break-word;  /* Ensure long words break within container */
-    hyphens: auto;              /* Optional: Adds hyphens where words are broken */
+    word-break: break-word; /* Break long words */
+    overflow-wrap: break-word; /* Ensure long words break within container */
+    hyphens: auto; /* Optional: Adds hyphens where words are broken */
   }
 
   .about {
@@ -1796,7 +1867,6 @@ footer p {
   }
 }
 
-
 @media (max-width: 768px) {
   .gradient-reviews {
     height: 1250px;
@@ -1809,7 +1879,6 @@ footer p {
   }
 }
 
-
 @media (max-width: 333px) {
   .gradient-reviews {
     height: 1850px;
@@ -1820,10 +1889,10 @@ footer p {
   font-family: sans-serif;
   text-align: center;
 }
-.form{
+.form {
   display: flex;
   flex-direction: column;
-  padding: 20px
+  padding: 20px;
 }
 
 .form input {
@@ -1831,10 +1900,9 @@ footer p {
   margin-top: 20px;
   border-radius: 10px;
   padding: 5px;
-
 }
 
-.form :last-child{
+.form :last-child {
   width: 30%;
   background-color: green;
 }
@@ -1842,4 +1910,43 @@ footer p {
 .button:hover {
   background-color: #00aaff;
   color: black;
+}
+
+@media (min-width: "1000px") {
+  .gradient-aboutus::after {
+    content: "";
+    position: absolute;
+    top: -150px;
+    right: 0;
+    width: 100%;
+    height: 500px;
+    background: radial-gradient(
+      circle at 50% 50%,
+      #00aaff -90%,
+      transparent 60%
+    );
+    z-index: 2;
+    border-radius: 50%;
+    pointer-events: none;
+  }
+  .gradient-reviews::after {
+    content: "";
+    position: absolute;
+    bottom: -150px;
+    right: 0;
+    width: 100%;
+    height: 500px;
+    background: radial-gradient(
+      circle at 50% 50%,
+      #08cb62 -90%,
+      transparent 65%
+    );
+    z-index: 2;
+    border-radius: 50%;
+  }
+}
+
+.navbar-toggler-icon {
+  background-color: white;
+  border-radius: 5px;
 }

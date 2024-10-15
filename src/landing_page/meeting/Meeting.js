@@ -10,7 +10,7 @@ export default function Meeting() {
     const formData = new FormData(formEle);
 
     fetch(
-      "https://script.google.com/macros/s/AKfycbxDVH6YFgFjZr6f-s1V2noXpM2aB7Z7lEsE2qjPzi9kDvFzZz7anmCHVO5ie-KpPA0c/exec",
+      "https://script.google.com/macros/s/AKfycbx4OZ_njmgnuJ6kxogkjwR4izCn02GwC2ThkDhSmMrdodlX8MrBo56AOwOY9w2N75lm/exec",
       {
         method: "POST",
         body: formData,
@@ -42,11 +42,26 @@ export default function Meeting() {
         <form className="form" onSubmit={Submit}>
           <input placeholder="Your Name" name="Name" type="text" required />
           <input placeholder="Your Email" name="Email" type="email" required />
-          <input placeholder="Your Message" name="Message" type="text" required />
-          <input className="button" type="submit" value="Submit" />
+          <input
+            placeholder="Your Message"
+            name="Message"
+            type="text"
+            required
+          />
+          <input
+            className="button mt-5"
+            style={{ margin: "0 auto" }}
+            type="submit"
+            value="Submit"
+          />
         </form>
         {formStatus && (
-          <p style={{ color: formStatus === "Form submitted successfully!" ? "white" : "red" }}>
+          <p
+            style={{
+              color:
+                formStatus === "Form submitted successfully!" ? "white" : "red",
+            }}
+          >
             {formStatus}
           </p>
         )}

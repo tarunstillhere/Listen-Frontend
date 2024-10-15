@@ -9,7 +9,6 @@ function Feeling() {
       <div className="container mt-4">
         <div className="row feeling">
           <div className="col">
-
             <p className="feeling-para">Just want to share some feelings</p>
 
             <div className="feeling-img">
@@ -42,7 +41,6 @@ function Feeling() {
                 Call back me
               </button>
             </div>
-
           </div>
         </div>
       </div>

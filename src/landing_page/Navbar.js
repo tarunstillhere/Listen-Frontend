@@ -9,6 +9,7 @@ function MainPage() {
   const [scrollPosition, setScrollPosition] = useState(0);
   const [menuOpen, setMenuOpen] = useState(false);
   const menuRef = useRef(null);
+  const togglerRef = useRef(null); // Add a ref for the toggler button
 
   useEffect(() => {
     const handleScroll = () => {
@@ -23,14 +24,20 @@ function MainPage() {
 
   // Toggle menu visibility
   const handleMenuToggle = () => {
-    setMenuOpen((prev) => !prev);
+    setMenuOpen((prev) => !prev); // Toggle between open and closed
   };
 
-  // Close menu on clicking outside
+  // Close menu on clicking outside, but ignore the toggler button click
   useEffect(() => {
     const handleClickOutside = (event) => {
-      if (menuRef.current && !menuRef.current.contains(event.target)) {
-        setMenuOpen(false);
+      // Check if the click is outside of both the menu and the toggler button
+      if (
+        menuRef.current &&
+        !menuRef.current.contains(event.target) &&
+        togglerRef.current &&
+        !togglerRef.current.contains(event.target)
+      ) {
+        setMenuOpen(false); // Close the menu
       }
     };
 
@@ -53,10 +60,7 @@ function MainPage() {
               to="/"
               style={{ textDecoration: "none" }}
             >
-              <img className="logo" src="./media/images/logo.svg" alt="Logo" />
-            </Link>
-            <Link to="/" style={{ textDecoration: "none" }}>
-              <p className="logo-title">LISTNER</p>
+              <img className="logo" src="./media/images/logo.png" alt="Logo" />
             </Link>
           </div>
 
@@ -65,8 +69,9 @@ function MainPage() {
             type="button"
             onClick={handleMenuToggle} // Toggle menu state
             aria-controls="navbarSupportedContent"
-            aria-expanded={menuOpen}
+            aria-expanded={menuOpen} // Link this state to ensure it closes on toggle
             aria-label="Toggle navigation"
+            ref={togglerRef} // Assign ref to the toggler button
           >
             <span className="navbar-toggler-icon"></span>
           </button>
@@ -140,10 +145,7 @@ function MainPage() {
                     Chat now
                   </a>
 
-                  <button
-                    className="navs-btn p-4 pt-2 pb-2"
-                    style={{ width: "196px" }}
-                  >
+                  <button className="navs-btn p-4 pt-2 pb-2">
                     <img
                       src="./media/images/phone.png"
                       alt="Call us"

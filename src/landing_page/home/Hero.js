@@ -123,45 +123,43 @@ function Hero() {
       <div className="container">
         <div className="row">
           <div className="col">
-          <button
-          className="herobtn p-4 pt-2 pb-2"
-          onClick={() => {
-            window.location.href =
-              "https://api.whatsapp.com/send?phone=918700103640";
-          }}
-          style={{
-            display: "inline-flex",
-            alignItems: "center",
-            justifyContent: "center",
-            textDecoration: "none",
-            border: "none",
-            cursor: "pointer",
-            padding: "10px 20px",
-          }}
-        >
-          <img
-            src="./media/images/msg.png"
-            alt="Chat now"
-            style={{ marginRight: "20px" }}
-          />
-          Chat now
-        </button>
             <button
-                    className="herobtn2 p-4 pt-2 pb-2"
-                  >
-                    <img
-                      src="./media/images/phone.png"
-                      alt="Call us"
-                      style={{ marginRight: "20px" }}
-                    />
-                    <a
-                      href="tel:+91 8700103640"
-                      style={{ textDecoration: "none", color: "#000" }}
-                    >
-                      {" "}
-                      Call us{" "}
-                    </a>
-                  </button>
+              className="herobtn p-4 pt-2 pb-2"
+              onClick={() => {
+                window.location.href =
+                  "https://api.whatsapp.com/send?phone=918700103640";
+              }}
+              style={{
+                display: "inline-flex",
+                alignItems: "center",
+                justifyContent: "center",
+                textDecoration: "none",
+                border: "none",
+                cursor: "pointer",
+                padding: "10px 20px",
+              }}
+            >
+              <img
+                src="./media/images/msg.png"
+                alt="Chat now"
+                style={{ marginRight: "20px" }}
+              />
+              Chat now
+            </button>
+            <button className="herobtn2 p-4 pt-2 pb-2">
+              <img
+                src="./media/images/phone.png"
+                alt="Call us"
+                style={{ marginRight: "20px" }}
+              />
+              <a
+                href="tel:+91 8700103640"
+                style={{ textDecoration: "none", color: "#000" }}
+              >
+                {" "}
+                Call us{" "}
+              </a>
+            </button>
           </div>
         </div>
       </div>
